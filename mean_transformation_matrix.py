@@ -34,13 +34,10 @@ mean_tm_info = mne.create_info(ch_names, sfreq=sfreq)
 # Compute the mean of all matrices across the files and store it in mean_tm_info
 mean_tm_info["dev_head_t"]["trans"] = np.mean(pos, axis=0)
 
-# Add dig info to the empty .fif too
-mean_tm_info['dig'] = list_raw[0].info['dig']
-
-# Create raw object
+# Create data
 data = np.ones([len(ch_names), 1])
 
-# Link false data and info to create the .fif
+# Create raw object
 mean_tm_raw = mne.io.RawArray(data, mean_tm_info)
 mean_tm_raw.save('out_dir/mean_tm-raw.fif', overwrite=True)
 
