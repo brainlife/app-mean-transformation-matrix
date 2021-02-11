@@ -1,0 +1,6 @@
+{
+  "fif_1": "/network/lustre/iss01/cenir/analyse/meeg/BRAINLIFE/aurore/data_for_test/rest1-raw.fif",
+  "fif_2": "/network/lustre/iss01/cenir/analyse/meeg/BRAINLIFE/aurore/data_for_test/rest2-raw.fif",
+  "fif_3": "/network/lustre/iss01/cenir/analyse/meeg/BRAINLIFE/aurore/data_for_test/rest3-raw.fif",
+  "fif_4": "/network/lustre/iss01/cenir/analyse/meeg/BRAINLIFE/aurore/data_for_test/rest4-raw.fif"
+}
