@@ -12,7 +12,7 @@ the mean transformation matrix across all runs.
     * a MEG file in `.fif` format corresponding to the second run,
     * an optional MEG file in `.fif` format corresponding to the third run,
     * ...
-    * an optional MEG file in `.fif` format corresponding to the nth run.
+    * an optional MEG file in `.fif` format corresponding to the n<sup>th</sup> run.
 4) Ouput file is a `.fif` file with the mean tranformation matrix in
    `raw.info["dev_head_t"]["trans"]`.
    
