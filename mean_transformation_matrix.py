@@ -12,18 +12,21 @@ with open('config.json') as config_json:
     config = json.load(config_json)
 
 # Read all raw files and store them in a list
-keys = list(config.keys())
 list_raw = []
-for i in range(len(keys)):
-    data_file = str(config.pop(keys[i]))
+for data_file in config["fif"]:
     raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
     list_raw.append(raw)
 
+if len(config["fif"]) < 2:
+    ValueError_message = f'Only one run was given. This App needs at least two runs to compute ' \
+                         f'the mean transformation matrix.'
+    raise ValueError(ValueError_message)
+
 # Create an empty 3D matrix that will contain for each file its transposition matrix
-pos = np.zeros((len(keys), 4, 4))
+pos = np.zeros((len(list_raw), 4, 4))
 
 # Loop to store the transposition matrix of each file
-for raw, i in zip(list_raw, range(len(keys))):
+for raw, i in zip(list_raw, range(len(list_raw))):
     pos[i] = raw.info["dev_head_t"]["trans"]
 
 # Create info object of an empty .fif file from info of the first run
