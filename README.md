@@ -50,7 +50,10 @@ This App has not yet been registered in Brainlife.io.
 
 ```json
 {
-  "fif": "rest1-raw.fif"
+  "fif": [
+    "rest1-raw.fif",
+    "rest2-raw.fif"
+    ]
 }
 ```
 
