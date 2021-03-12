@@ -8,7 +8,7 @@ import json
 def mean_transformation_matrix(list_raw):
 	"""Compute the mean transformation matrix across all runs thanks to head position registered at the beginning of each run.
 
-	Parameters
+    Parameters
     ----------
     list_raw: list of instance of mne.io.Raw
         List of all the runs that we want to realign by computing the mean transformation matrix. At least two runs are required.
@@ -46,7 +46,7 @@ def mean_transformation_matrix(list_raw):
 
 def main():
 
-	# Generate a json.product to display messages on Brainlife UI
+    # Generate a json.product to display messages on Brainlife UI
     dict_json_product = {'brainlife': []}
 
     # Load inputs from config.json
