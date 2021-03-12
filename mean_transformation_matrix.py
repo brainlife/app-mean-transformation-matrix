@@ -6,7 +6,7 @@ import json
 
 
 def mean_transformation_matrix(list_raw):
-	"""Compute the mean transformation matrix across all runs thanks to head position registered at the beginning of each run.
+    """Compute the mean transformation matrix across all runs thanks to head position registered at the beginning of each run.
 
     Parameters
     ----------
