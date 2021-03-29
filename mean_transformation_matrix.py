@@ -39,7 +39,7 @@ def mean_transformation_matrix(list_raw):
 
     # Create raw object
     mean_tm_raw = mne.io.RawArray(data, mean_tm_info)
-    mean_tm_raw.save('out_dir/mean_tm-raw.fif', overwrite=True)
+    mean_tm_raw.save('out_dir/destination.fif', overwrite=True)
 
     return mean_tm_raw 
 
