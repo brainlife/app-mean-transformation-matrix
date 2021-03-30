@@ -15,8 +15,8 @@ def mean_transformation_matrix(list_raw):
 
     Returns
     -------
-    mean_tm_raw: ndarray, shape (4, 4)
-        The mean transformation matrix across all runs.
+    mean_tm_raw: instance of mne.io.Raw
+        The mean transformation matrix across all runs saved in a .fif file. 
     """
 
     # Create an empty 3D matrix that will contain for each file its transposition matrix

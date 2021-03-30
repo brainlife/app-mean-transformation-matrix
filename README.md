@@ -65,5 +65,5 @@ This App has not yet been registered in Brainlife.io.
 
 ## Output
 
-The output file is `.fif` file.
+The output file is a `.fif` file.
 
