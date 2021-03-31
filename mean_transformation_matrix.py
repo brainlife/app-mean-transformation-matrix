@@ -86,7 +86,7 @@ def main():
     # Read the destination file
     destination_file = config.pop('destination')
     if os.path.exists(destination_file) is True:
-        shutil.copy2(destination_file, 'out_dir_bad_channels/destination.fif')  # required to run a pipeline on BL
+        shutil.copy2(destination_file, 'out_dir_bad/destination.fif')  # required to run a pipeline on BL
 
     # Get head pos file
     head_pos = config.pop('headshape')
@@ -103,3 +103,7 @@ def main():
     # Save the dict_json_product in a json file
     with open('product.json', 'w') as outfile:
         json.dump(dict_json_product, outfile)
+
+
+if __name__ == '__main__':
+    main()
