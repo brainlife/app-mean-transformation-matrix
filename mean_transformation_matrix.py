@@ -68,6 +68,11 @@ def main():
                               f'the mean transformation matrix.'
         raise ValueError(value_error_message)
 
+    # Read and save the fif file to be preprocess
+    data_file = (config.pop('fif'))
+    raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
+    raw.save("out_dir/meg.fif", overwrite=True)
+
     # Read the crosstalk files
     cross_talk_file = config.pop('crosstalk')
     if os.path.exists(cross_talk_file) is True:
