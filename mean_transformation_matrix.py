@@ -83,15 +83,10 @@ def main():
     if os.path.exists(calibration_file) is True:
         shutil.copy2(calibration_file, 'out_dir/calibration_meg.dat')  # required to run a pipeline on BL
 
-    # Read the destination file
-    destination_file = config.pop('destination')
-    if os.path.exists(destination_file) is True:
-        shutil.copy2(destination_file, 'out_dir_bad/destination.fif')  # required to run a pipeline on BL
-
     # Get head pos file
     head_pos = config.pop('headshape')
     if os.path.exists(head_pos) is True:
-        shutil.copy2(head_pos, 'out_dir_maxfilter/headshape.pos')  # required to run a pipeline on BL
+        shutil.copy2(head_pos, 'out_dir/headshape.pos')  # required to run a pipeline on BL
 
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
