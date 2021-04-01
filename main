@@ -17,8 +17,5 @@ set -x
 # Make output directory
 mkdir -p out_dir
 
-# test local
-singularity exec -e -B /network/lustre/iss01/cenir/analyse/meeg/BRAINLIFE/aurore/data_for_test docker://brainlife/mne:0.22.0 python3 mean_transformation_matrix.py .
-
 # Run the actual python code
-#singularity exec docker://brainlife/mne:0.22.0 python3 mean_transformation_matrix.py .
+singularity exec docker://brainlife/mne:0.22.0 python3 mean_transformation_matrix.py .
