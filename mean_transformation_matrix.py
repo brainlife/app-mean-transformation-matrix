@@ -69,7 +69,7 @@ def main():
         raise ValueError(value_error_message)
 
     # Read and save the fif file to be preprocess
-    data_file = (config.pop('fif'))
+    data_file = config.pop('fif')
     raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
     raw.save("out_dir/meg.fif", overwrite=True)
 
