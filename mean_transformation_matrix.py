@@ -26,7 +26,7 @@ def mean_transformation_matrix(list_raw):
     # Create an empty 3D matrix that will contain for each file its transposition matrix
     pos = np.zeros((len(list_raw), 4, 4))
 
-    # Loop to store the transposition matrix of each file
+    # Loop to store the transformation matrix of each file
     for raw, i in zip(list_raw, range(len(list_raw))):
         pos[i] = raw.info["dev_head_t"]["trans"]
 
