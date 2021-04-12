@@ -68,7 +68,7 @@ def main():
                               f'the mean transformation matrix.'
         raise ValueError(value_error_message)
 
-    # Read and save the fif file to be preprocess
+    # Read and save the fif file to be preprocessed
     data_file = config.pop('fif')
     raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
     raw.save("out_dir/meg.fif", overwrite=True)
@@ -83,10 +83,15 @@ def main():
     if os.path.exists(calibration_file) is True:
         shutil.copy2(calibration_file, 'out_dir/calibration_meg.dat')  # required to run a pipeline on BL
 
-    # Get head pos file
+    # Read head pos file
     head_pos = config.pop('headshape')
     if os.path.exists(head_pos) is True:
         shutil.copy2(head_pos, 'out_dir/headshape.pos')  # required to run a pipeline on BL
+
+    # Read events file 
+    events_file = config.pop('events')
+    if os.path.exists(events_file) is True:
+        shutil.copy2(events_file, 'out_dir/events.tsv')  # required to run a pipeline on BL
 
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
