@@ -1,18 +1,25 @@
 # app-mean-transformation-matrix
 
-This is a draft of a future Brainlife App using [MNE Python](https://mne.tools/stable/index.html) to compute 
+Repository of a Brainlife App using [MNE Python](https://mne.tools/stable/index.html) to compute 
 the mean transformation matrix across all runs. 
 
 # app-mean-transformation-matrix documentation
 
 1) Compute the mean tranformation matrix across all runs  
-2) Allow to have the same head position across all runs
+2) This matrix will be used to realign all runs according to the mean head position at the beginning of all runs when applying Maxwell Filtering.
 3) Input files are:
     * a MEG file in `.fif` format corresponding to the first run,
     * a MEG file in `.fif` format corresponding to the second run,
     * an optional MEG file in `.fif` format corresponding to the third run,
     * ...
-    * an optional MEG file in `.fif` format corresponding to the n<sup>th</sup> run.
+    * an optional MEG file in `.fif` format corresponding to the n<sup>th</sup> 
+    * the MEG file in `.fif` format we will want to preprocess,
+    * an optional fine calibration file in `.dat`,
+    * an optional crosstalk compensation file in `.fif`,
+    * an optional head position file in `.pos`,
+    * an optional destination file in `.fif`,
+    * an optional event file in `.tsv`.
+run. 
 4) Ouput file is a `.fif` file with the mean tranformation matrix in
    `raw.info["dev_head_t"]["trans"]`.
    
@@ -45,8 +52,8 @@ This App has not yet been registered in Brainlife.io.
 ### Running Locally (on your machine)
 
 1. git clone this repo
-2. Inside the cloned directory, create `config.json` with something like the following content with paths to your input 
-   files and values of the input parameters (see `config.json.example`).
+2. Inside the cloned directory, create `config.json` with the same keys as in `config.json.example` but with paths to your input 
+   files and values of the input parameters.
 
 ```json
 {
