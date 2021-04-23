@@ -59,39 +59,38 @@ def main():
 
     # Read all raw files and store them in a list
     list_raw = []
-    for data_file in config["fif_runs"]:
+    for data_file in config["fif"]:
         raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
         list_raw.append(raw)
 
-    if len(config["fif_runs"]) < 2:
+    if len(list_raw) < 2:
         value_error_message = f'Only one run was given. This App needs at least two runs to compute ' \
                               f'the mean transformation matrix.'
         raise ValueError(value_error_message)
 
     # Read and save the fif file to be preprocessed
-    data_file = config.pop('fif')
-    raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
-    raw.save("out_dir/meg.fif", overwrite=True)
+    # data_file = config.pop('fif')
+    # raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
+    # raw.save("out_dir/meg.fif", overwrite=True)
 
     # Read the crosstalk files
     cross_talk_file = config.pop('crosstalk')
-    if os.path.exists(cross_talk_file) is True:
-        #shutil.copy2(cross_talk_file, 'out_dir/crosstalk_meg.fif')  # required to run a pipeline on BL
-        print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    if os.path.exists(cross_talk_file):
+        shutil.copy2(cross_talk_file, 'out_dir/crosstalk_meg.fif')  # required to run a pipeline on BL
 
     # Read the calibration file
     calibration_file = config.pop('calibration')
-    if os.path.exists(calibration_file) is True:
+    if os.path.exists(calibration_file):
         shutil.copy2(calibration_file, 'out_dir/calibration_meg.dat')  # required to run a pipeline on BL
 
     # Read head pos file
     head_pos = config.pop('headshape')
-    if os.path.exists(head_pos) is True:
+    if os.path.exists(head_pos):
         shutil.copy2(head_pos, 'out_dir/headshape.pos')  # required to run a pipeline on BL
 
     # Read events file 
     events_file = config.pop('events')
-    if os.path.exists(events_file) is True:
+    if os.path.exists(events_file):
         shutil.copy2(events_file, 'out_dir/events.tsv')  # required to run a pipeline on BL
 
     # Compute mean transformation matrix
