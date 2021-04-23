@@ -59,19 +59,20 @@ def main():
 
     # Read all raw files and store them in a list
     list_raw = []
-    for data_file in config["fif"]:
+    for data_file in config["fif_runs"]:
         raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
         list_raw.append(raw)
 
+    # Test if at least two runs are given
     if len(list_raw) < 2:
         value_error_message = f'Only one run was given. This App needs at least two runs to compute ' \
                               f'the mean transformation matrix.'
         raise ValueError(value_error_message)
 
     # Read and save the fif file to be preprocessed
-    # data_file = config.pop('fif')
-    # raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
-    # raw.save("out_dir/meg.fif", overwrite=True)
+    data_file = config.pop('fif')
+    raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
+    raw.save("out_dir/meg.fif", overwrite=True)
 
     # Read the crosstalk files
     cross_talk_file = config.pop('crosstalk')
