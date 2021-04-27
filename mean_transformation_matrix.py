@@ -74,6 +74,9 @@ def main():
     raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
     raw.save("out_dir/meg.fif", overwrite=True)
 
+
+    ## Read the optional files ##
+
     # Read the crosstalk files
     cross_talk_file = config.pop('crosstalk')
     if os.path.exists(cross_talk_file):
@@ -94,6 +97,7 @@ def main():
     if os.path.exists(events_file):
         shutil.copy2(events_file, 'out_dir/events.tsv')  # required to run a pipeline on BL
 
+    
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
 
