@@ -6,7 +6,8 @@
     "fif": "/network/lustre/iss01/home/aurore.bussalb/Repositories/app-maxfilter/data/rest1-raw.fif",
     "calibration": "/network/lustre/iss01/home/aurore.bussalb/Repositories/data_test_BL/sss_cal.dat",
     "crosstalk": "/network/lustre/iss01/home/aurore.bussalb/Repositories/data_test_BL/ct_sparse.fif",
-    "headshape": "",
-    "destination": "",
-    "events": "/network/lustre/iss01/home/aurore.bussalb/Repositories/app-create-events/out_dir_create_events/events.tsv"
+    "headshape": null,
+    "destination": null,
+    "events": "/network/lustre/iss01/home/aurore.bussalb/Repositories/app-create-events/out_dir_create_events/events.tsv",
+	"channels": null
 }
