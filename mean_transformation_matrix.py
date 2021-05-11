@@ -69,10 +69,6 @@ def main():
                               f'the mean transformation matrix.'
         raise ValueError(value_error_message)
 
-    # Read and save the fif file to be preprocessed
-    data_file = config.pop('fif')
-    raw = mne.io.read_raw_fif(data_file, allow_maxshield=True)
-
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
 
