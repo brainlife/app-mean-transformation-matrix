@@ -73,10 +73,10 @@ def main():
 
     # Read the head pos file
     if 'headshape' in config.keys():
-        destination_file = config.pop('headshape')
-        if destination_file is not None:
-            if os.path.exists(destination_file) is True:
-                shutil.copy2(destination_file, 'out_dir/headshape.pos')  # required to run a pipeline on BL
+        head_pos_file = config.pop('headshape')
+        if head_pos_file is not None:
+            if os.path.exists(head_pos_file) is True:
+                shutil.copy2(head_pos_file, 'out_dir/headshape.pos')  # required to run a pipeline on BL
 
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
