@@ -13,7 +13,6 @@ the mean transformation matrix across all runs.
     * an optional MEG file in `.fif` format corresponding to the third run,
     * ...
     * an optional MEG file in `.fif` format corresponding to the n<sup>th</sup> 
-    * the MEG file in `.fif` format we will want to preprocess,
     * an optional fine calibration file in `.dat`,
     * an optional crosstalk compensation file in `.fif`,
     * an optional head position file in `.pos`,

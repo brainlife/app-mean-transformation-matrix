@@ -5,6 +5,7 @@ import numpy as np
 import json
 import os
 import shutil
+import helper
 
 
 def mean_transformation_matrix(list_raw):
@@ -72,11 +73,13 @@ def main():
     ## Read the optional file ##
 
     # Read the head pos file
-    if 'headshape' in config.keys():
-        head_pos_file = config.pop('headshape')
-        if head_pos_file is not None:
-            if os.path.exists(head_pos_file) is True:
-                shutil.copy2(head_pos_file, 'out_dir/headshape.pos')  # required to run a pipeline on BL
+    # if 'headshape' in config.keys():
+    #     head_pos_file = config.pop('headshape')
+    #     if head_pos_file is not None:
+    #         if os.path.exists(head_pos_file) is True:
+    #             shutil.copy2(head_pos_file, 'out_dir/headshape.pos')  # required to run a pipeline on BL
+
+    config = helper.read_optional_files(config, 'out_dir')
 
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
