@@ -8,5 +8,5 @@
     "headshape": null,
     "destination": null,
     "events": "/network/lustre/iss01/home/aurore.bussalb/Repositories/app-create-events/out_dir_create_events/events.tsv",
-	"channels": null
+    "channels": null
 }

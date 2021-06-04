@@ -5,7 +5,7 @@ the mean transformation matrix across all runs.
 
 # app-mean-transformation-matrix documentation
 
-1) Compute the mean tranformation matrix across all runs  
+1) Compute the mean tranformation matrix across all runs
 2) This matrix will be used to realign all runs according to the mean head position at the beginning of all runs when applying Maxwell Filtering.
 3) Input files are:
     * a MEG file in `.fif` format corresponding to the first run,

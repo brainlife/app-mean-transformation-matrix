@@ -70,15 +70,7 @@ def main():
                               f'the mean transformation matrix.'
         raise ValueError(value_error_message)
 
-    ## Read the optional file ##
-
-    # Read the head pos file
-    # if 'headshape' in config.keys():
-    #     head_pos_file = config.pop('headshape')
-    #     if head_pos_file is not None:
-    #         if os.path.exists(head_pos_file) is True:
-    #             shutil.copy2(head_pos_file, 'out_dir/headshape.pos')  # required to run a pipeline on BL
-
+    # Read and save optional files
     config = helper.read_optional_files(config, 'out_dir')
 
     # Compute mean transformation matrix
