@@ -17,7 +17,8 @@ the mean transformation matrix across all runs.
     * an optional crosstalk compensation file in `.fif`,
     * an optional head position file in `.pos`,
     * an optional destination file in `.fif`,
-    * an optional event file in `.tsv`.
+    * an optional events file in `.tsv`,
+    * an optional channels file in `.tsv`.
 run. 
 4) Ouput file is a `.fif` file with the mean tranformation matrix in
    `raw.info["dev_head_t"]["trans"]`.
