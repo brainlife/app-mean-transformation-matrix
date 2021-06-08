@@ -18,4 +18,4 @@ set -x
 mkdir -p out_dir
 
 # Run the actual python code
-singularity exec docker://brainlife/mne:0.22.0 python3 mean_transformation_matrix.py .
+singularity exec docker://brainlife/mne:0.23dev python3 mean_transformation_matrix.py .
