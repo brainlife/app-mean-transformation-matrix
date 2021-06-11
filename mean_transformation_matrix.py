@@ -5,7 +5,7 @@ import numpy as np
 import json
 import os
 import shutil
-import helper
+from brainlife_apps_helper import helper
 
 
 def mean_transformation_matrix(list_raw):
