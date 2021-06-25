@@ -4,7 +4,6 @@ import mne
 import numpy as np
 import json
 import os
-import shutil
 from brainlife_apps_helper import helper
 
 
@@ -71,7 +70,7 @@ def main():
         raise ValueError(value_error_message)
 
     # Read and save optional files
-    config = helper.read_optional_files(config, 'out_dir')
+    helper.read_optional_files(config, 'out_dir')
 
     # Compute mean transformation matrix
     mean_transformation_matrix(list_raw)
