@@ -12,7 +12,7 @@
 
 This App uses [MNE-Python](https://mne.tools/stable/index.html) to average the head positions recorded at the beginning of each run (`raw.info["dev_head_t"]["trans"]`) into a single transformation matrix. Passed as the destination to Maxwell filtering, this matrix realigns all runs to the mean head position.
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -22,20 +22,20 @@ Reads the MEG runs of a session (.fif) and averages their initial head positions
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/meg/fif` · `neuro/meg/fif-override` (optional) |
-| 📤 **Outputs** | `neuro/meg/fif-override` |
-| 🐳 **Container** | `brainlife/mne:0.23dev` |
-| ⚙️ **Resources** | 1 CPUs |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.496](https://doi.org/10.25663/brainlife.app.496) |
+| **Inputs** | `neuro/meg/fif` · `neuro/meg/fif-override` (optional) |
+| **Outputs** | `neuro/meg/fif-override` |
+| **Container** | `brainlife/mne:0.23dev` |
+| **Resources** | 1 CPUs |
+| **Run it** | [doi.org/10.25663/brainlife.app.496](https://doi.org/10.25663/brainlife.app.496) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `fif` | `neuro/meg/fif` | yes | All the runs of a MEG session that we want to realign by computing the mean head position across all these runs (this position is stored in a transformation matrix). At least two runs are required. |
 | `Opt` | `neuro/meg/fif-override` | no | Headshape.pos file. This file is computed with app-head-pos. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -43,13 +43,13 @@ Reads the MEG runs of a session (.fif) and averages their initial head positions
 
 <!-- brainlife-app:end -->
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.496](https://doi.org/10.25663/brainlife.app.496), choose all the runs of a MEG session (`neuro/meg/fif`, at least two) and, optionally, a `neuro/meg/fif-override` dataset (for example the `headshape.pos` file from the [head position App](https://github.com/brainlife/app-head-pos)), then press **Execute**. The App has no parameters. It archives a `neuro/meg/fif-override` dataset with the destination file, ready for the Maxwell filtering App.
 
-### 💻 Locally
+### Locally
 
 You need [Singularity/Apptainer](https://apptainer.org/). `main` runs `mean_transformation_matrix.py` in the `brainlife/mne:0.23dev` container.
 
@@ -80,7 +80,7 @@ You need [Singularity/Apptainer](https://apptainer.org/). `main` runs `mean_tran
    ./main
    ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 out_dir/
@@ -90,11 +90,11 @@ product.json           status message shown on brainlife.io
 
 Optional input files given in `config.json` are passed through to `out_dir/`.
 
-## 🩺 Troubleshooting
+## Troubleshooting
 
 - **`Only one run was given. This App needs at least two runs to compute the mean transformation matrix.`**: select two or more runs of the same session.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -104,13 +104,13 @@ Optional input files given in `config.json` are passed through to `out_dir/`.
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 - Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. *Scientific Data* 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
-## 👥 Authors
+## Authors
 
 - Aurore Bussalb
 
 **Contributors:** Maximilien Chaumon, Christophe Gitton
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -129,6 +129,6 @@ Optional input files given in `config.json` are passed through to `out_dir/`.
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 [MIT](LICENSE). MNE-Python is distributed under its own BSD license.
