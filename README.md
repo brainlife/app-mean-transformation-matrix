@@ -1,5 +1,26 @@
 # app-mean-transformation-matrix
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Computes the mean head position (device-to-head transformation matrix) across several MEG runs with MNE-Python, for realigning all runs during Maxwell filtering.**
+
+Reads the MEG runs of a session (.fif) and averages their initial head positions into one transformation matrix, saved for use as the destination when applying Maxwell filtering so that all runs share the same head position. Use it before Maxwell filtering of multi-run MEG sessions; an optional headshape .pos file from app-head-pos can be supplied.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.496](https://doi.org/10.25663/brainlife.app.496)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `fif` | `neuro/meg/fif` | yes | All the runs of a MEG session that we want to realign by computing the mean head position across all these runs (this position is stored in a transformation matrix). At least two runs are required. |
+| `Opt` | `neuro/meg/fif-override` | no | Headshape.pos file. This file is computed with app-head-pos. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `out_dir` | `neuro/meg/fif-override` | Destination file containing the mean transformation matrix to realign all the runs on the same head position and .fif file to preprocess. |
+
+Runtime: container `brainlife/mne:0.23dev`; 1 CPUs.
+
+<!-- brainlife-app:end -->
+
 Repository of a Brainlife App using [MNE Python](https://mne.tools/stable/index.html) to compute 
 the mean transformation matrix across all runs. 
 
